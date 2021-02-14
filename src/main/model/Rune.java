@@ -47,10 +47,10 @@ public class Rune {
     }
 
     public void displayRune() {
-        System.out.println("      " + primaryTree + "      " + secondaryTree);
-        System.out.println("      " + keystoneRune + "      " + sec1);
-        System.out.println("      " + prim2 + "      " + sec2);
-        System.out.println("      " + prim3);
-        System.out.println("      " + prim4);
+        System.out.println("\t" + primaryTree + "\t" + secondaryTree);
+        System.out.println("\t" + keystoneRune + "\t" + sec1);
+        System.out.println("\t" + prim2 + "\t" + sec2);
+        System.out.println("\t" + prim3);
+        System.out.println("\t" + prim4);
     }
 }
