@@ -2,7 +2,9 @@
 
 ## League of Legends Rune Page Manager 
 
-This application is for League of Legends players. League of Legends has a rune system. There are 5 different rune trees. 
+This application is for League of Legends players. League of Legends has a rune system. 
+Runes add or enhance champion abilities and statistics. 
+There are 5 different rune trees. 
 They are: 
 - Precision
 - Domination
