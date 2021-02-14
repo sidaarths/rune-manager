@@ -11,6 +11,7 @@ They are:
 - Inspiration
 
 The game allows you to select 4 runes from one of the 5 trees and 2 secondary runes from another of these. 
+The first rune from the primary tree is known as the keystone rune. It is the most important one. 
 Runes allow for varied playstyles and builds. The same character can be played in multiple different ways by changing 
 your rune page. 
 
@@ -18,7 +19,8 @@ your rune page.
 The application will allow you to:
 - store and keep track of rune pages 
 - display all the stored rune pages
-- display the rune pages that have the same specific primary tree
+- display all the rune pages that have a specific keystone rune 
+- search for a rune page using its title
 
 This project is of interest to me as it is something that will be useful to me as I play League of Legends.
  
