@@ -25,5 +25,5 @@ This project is of interest to me as it is something that will be useful to me a
 ##User Stories
 
 - As a user, I want to be able to add a rune page to my collection
-- As a user, I want to view a list of titles and primary keystones of each rune page
+- As a user, I want to view a list of titles and keystones of each rune page
 - As a user, I want to be able to select a rune page in my collection and view the rune page in detail
