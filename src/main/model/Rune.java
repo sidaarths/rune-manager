@@ -13,17 +13,17 @@ public class Rune {
     private String sec2;
 
     // EFFECTS: rune page has given title, primary and secondary trees, and runes in them
-    public Rune(String tit, String primR, String secR, String keyR, String pr2, String pr3, String pr4,
-                String sc1, String sc2) {
-        this.title = tit;
-        this.primaryTree = primR;
-        this.secondaryTree = secR;
-        this.keystoneRune = keyR;
-        this.prim2 = pr2;
-        this.prim3 = pr3;
-        this.prim4 = pr4;
-        this.sec1 = sc1;
-        this.sec2 = sc2;
+    public Rune(String title, String primaryTree, String secondaryTree, String keystoneRune, String prim2, String prim3,
+                String prim4, String sec1, String sec2) {
+        this.title = title;
+        this.primaryTree = primaryTree;
+        this.secondaryTree = secondaryTree;
+        this.keystoneRune = keystoneRune;
+        this.prim2 = prim2;
+        this.prim3 = prim3;
+        this.prim4 = prim4;
+        this.sec1 = sec1;
+        this.sec2 = sec2;
     }
 
     //EFFECTS: returns title
