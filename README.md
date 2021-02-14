@@ -17,8 +17,13 @@ your rune page.
 
 The application will allow you to:
 - store and keep track of rune pages 
-- sort through the stored rune pages
+- display all the stored rune pages
 - display the rune pages that have the same specific primary tree
 
 This project is of interest to me as it is something that will be useful to me as I play League of Legends.
  
+##User Stories
+
+- As a user, I want to be able to add a rune page to my collection
+- As a user, I want to view a list of titles and primary keystones of each rune page
+- As a user, I want to be able to select a rune page in my collection and view the rune page in detail
