@@ -26,6 +26,7 @@ public class RuneApp {
         while (keepGoing) {
             displayMenu();
             command = input.next();
+            input.skip("((?<!\\R)\\s)*");
             command = command.toLowerCase();
 
             if (command.equals("q")) {
@@ -90,9 +91,7 @@ public class RuneApp {
 
     //EFFECTS: displays all rune pages' titles and keystone runes
     private void doDisplay() {
-        if (runeList.displayLst()) {
-            runeList.displayLst();
-        } else {
+        if (!runeList.displayLst()) {
             System.out.println("The list is empty.");
         }
     }
@@ -101,9 +100,7 @@ public class RuneApp {
     private void doKeyDisplay() {
         System.out.println("Enter keystone rune to search for: ");
         String keyR = input.nextLine();
-        if (runeList.displayLstWithKey(keyR)) {
-            runeList.displayLstWithKey(keyR);
-        } else {
+        if (!runeList.displayLstWithKey(keyR)) {
             System.out.println("No rune page with specified keystone found.");
         }
     }
@@ -112,9 +109,7 @@ public class RuneApp {
     private void doSearch() {
         System.out.println("Enter title to search for: ");
         String tit = input.nextLine();
-        if (runeList.displayRuneWithTitle(tit)) {
-            runeList.displayRuneWithTitle(tit);
-        } else {
+        if (!runeList.displayRuneWithTitle(tit)) {
             System.out.println("No rune page with specified title found.");
         }
     }
