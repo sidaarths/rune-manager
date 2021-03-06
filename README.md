@@ -12,8 +12,8 @@ They are:
 - Resolve
 - Inspiration
 
-The game allows you to select 4 runes from one of the 5 trees and 2 secondary runes from another of these. 
-The first rune from the primary tree is known as the keystone rune. It is the most important one. 
+You can choose runes from 2 different trees. The game allows you to select 4 runes from the primary tree and 2 runes from another tree which we will call the secondary tree. 
+The keystone rune is the first rune from the primary tree. This rune has a major impact on your character. You can only have one keystone rune, and it must be from your primary tree.
 Runes allow for varied playstyles and builds. The same character can be played in multiple different ways by changing 
 your rune page. 
 
