@@ -3,17 +3,27 @@ package ui;
 
 import model.Rune;
 import model.RuneList;
+import persistence.JsonReader;
+import persistence.JsonWriter;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 //Rune Manager Application
 public class RuneApp {
+    private static final String JSON_STORE = "./data/myFile.json";
     private RuneList runeList;
     private Scanner input;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     //EFFECTS: runs rune application
-    public RuneApp() {
+    public RuneApp() throws FileNotFoundException {
         runeList = new RuneList();
         input = new Scanner(System.in);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runApp();
     }
 
@@ -51,6 +61,10 @@ public class RuneApp {
             doSearch();
         } else if (command.equals("r")) {
             doDelete();
+        } else if (command.equals("f")) {
+            saveRunePageList();
+        } else if (command.equals("l")) {
+            loadRunPageList();
         } else {
             System.out.println("Selection not valid...");
         }
@@ -64,6 +78,8 @@ public class RuneApp {
         System.out.println("\td -> display all rune pages");
         System.out.println("\tk -> list rune pages with specific keystone");
         System.out.println("\ts -> search for a rune page with title");
+        System.out.println("\tf -> save rune page list to file");
+        System.out.println("\tl -> load rune page list from file");
         System.out.println("\tq -> quit");
     }
 
@@ -122,6 +138,29 @@ public class RuneApp {
         String tit = input.nextLine();
         if (!runeList.displayRuneWithTitle(tit)) {
             System.out.println("No rune page with specified title found.");
+        }
+    }
+
+    // EFFECTS: saves the rune page list to file
+    private void saveRunePageList() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(runeList);
+            jsonWriter.close();
+            System.out.println("Saved list to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads rune page list from file
+    private void loadRunPageList() {
+        try {
+            runeList = jsonReader.read();
+            System.out.println("Loaded list from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
 }

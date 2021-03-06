@@ -1,7 +1,10 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 //Represents one rune page
-public class Rune {
+public class Rune implements Writable {
     private String title;
     private String primaryTree;
     private String secondaryTree;
@@ -55,5 +58,20 @@ public class Rune {
         System.out.println(secondaryTree + ": ");
         System.out.println("\t-" + sec1);
         System.out.println("\t-" + sec2);
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("title", title);
+        json.put("primaryTree", primaryTree);
+        json.put("secondaryTree", secondaryTree);
+        json.put("keystoneRune", keystoneRune);
+        json.put("prim2", prim2);
+        json.put("prim3", prim3);
+        json.put("prim4", prim4);
+        json.put("sec1", sec1);
+        json.put("sec2", sec2);
+        return json;
     }
 }
