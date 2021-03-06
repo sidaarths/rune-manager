@@ -27,6 +27,18 @@ public class RuneList {
         lst.add(rune);
     }
 
+    //MODIFIES: this
+    //EFFECTS: deletes a rune page with given title from list
+    public void deleteRune(String title) {
+        ArrayList<Rune> newList = new ArrayList<>();
+        for (Rune r:lst) {
+            if (!r.getTitle().equals(title)) {
+                newList.add(r);
+            }
+        }
+        lst = newList;
+    }
+
     //EFFECTS: produces true and displays titles and keystone runes of all pages or false if list is empty
     public boolean displayLst() {
         if (isEmpty()) {
@@ -70,5 +82,4 @@ public class RuneList {
         }
         return false;
     }
-
 }

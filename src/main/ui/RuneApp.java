@@ -49,6 +49,8 @@ public class RuneApp {
             doKeyDisplay();
         } else if (command.equals("s")) {
             doSearch();
+        } else if (command.equals("r")) {
+            doDelete();
         } else {
             System.out.println("Selection not valid...");
         }
@@ -58,6 +60,7 @@ public class RuneApp {
     private void displayMenu() {
         System.out.println("\nSelect from:");
         System.out.println("\ta -> add new rune page");
+        System.out.println("\tr -> delete a rune page");
         System.out.println("\td -> display all rune pages");
         System.out.println("\tk -> list rune pages with specific keystone");
         System.out.println("\ts -> search for a rune page with title");
@@ -94,6 +97,14 @@ public class RuneApp {
         if (!runeList.displayLst()) {
             System.out.println("The list is empty.");
         }
+    }
+
+    //MODIFIES: this
+    //EFFECTS: deletes a runepage with title from list
+    private void doDelete() {
+        System.out.println("Enter title for rune page you want to delete: ");
+        String title = input.nextLine();
+        runeList.deleteRune(title);
     }
 
     //EFFECTS: displays all rune pages' titles and keystone runes with specified keystone

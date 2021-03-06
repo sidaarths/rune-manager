@@ -58,4 +58,33 @@ public class RuneListTest {
         runeList.addRune(rune2);
         assertTrue(runeList.displayRuneWithTitle("title2"));
     }
+
+    @Test
+    public void testDeleteRune() {
+        runeList.addRune(rune1);
+        assertEquals(runeList.length(), 1);
+        runeList.deleteRune("title");
+        assertTrue(runeList.isEmpty());
+    }
+
+    @Test
+    public void testDeleteRuneWithTwoRunes() {
+        runeList.addRune(rune1);
+        assertEquals(runeList.length(), 1);
+        runeList.addRune(rune2);
+        assertEquals(runeList.length(), 2);
+        runeList.deleteRune("title");
+        assertEquals(runeList.length(), 1);
+    }
+
+    @Test
+    public void testDeleteRuneWithNoDeletions() {
+        runeList.addRune(rune1);
+        assertEquals(runeList.length(), 1);
+        runeList.addRune(rune2);
+        assertEquals(runeList.length(), 2);
+        runeList.deleteRune("title0");
+        assertEquals(runeList.length(), 2);
+    }
+
 }
