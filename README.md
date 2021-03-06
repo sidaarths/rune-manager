@@ -32,3 +32,6 @@ This project is of interest to me as it is something that will be useful to me a
 - As a user, I want to view a list of titles and keystones of each rune page
 - As a user, I want to be able to display all the rune pages that have a specific keystone rune
 - As a user, I want to be able to select a rune page in my collection and view the rune page in detail
+- As a user, I want to be able to delete a rune page in my collection 
+- As a user, I want to be able to store the rune pages on a file
+- As a user, I want to be able to lead rune pages from a file
