@@ -104,4 +104,9 @@ public class RuneList implements Writable {
 
         return jsonArray;
     }
+
+    //EFFECTS: produces the list of rune pages
+    public ArrayList<Rune> toList() {
+        return runePageList;
+    }
 }

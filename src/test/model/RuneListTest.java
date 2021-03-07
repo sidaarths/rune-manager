@@ -3,6 +3,8 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RuneListTest {
@@ -30,6 +32,8 @@ public class RuneListTest {
     public void testAddRune() {
         runeList.addRune(rune1);
         assertEquals(runeList.length(), 1);
+        ArrayList<Rune> list = runeList.toList();
+        assertEquals(list.get(0), rune1);
     }
 
     @Test
@@ -75,6 +79,8 @@ public class RuneListTest {
         assertEquals(runeList.length(), 2);
         runeList.deleteRune("title");
         assertEquals(runeList.length(), 1);
+        ArrayList<Rune> list = runeList.toList();
+        assertEquals(list.get(0), rune2);
     }
 
     @Test
