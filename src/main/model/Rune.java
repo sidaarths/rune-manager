@@ -49,15 +49,16 @@ public class Rune implements Writable {
         return keystoneRune;
     }
 
-    public void displayRune() {
-        System.out.println(primaryTree + ": ");
-        System.out.println("\t-" + keystoneRune);
-        System.out.println("\t-" + prim2);
-        System.out.println("\t-" + prim3);
-        System.out.println("\t-" + prim4);
-        System.out.println(secondaryTree + ": ");
-        System.out.println("\t-" + sec1);
-        System.out.println("\t-" + sec2);
+    //EFFECTS: converts Rune info to a string to display
+    public String displayRune() {
+        return primaryTree + ": "
+                + "  - " + keystoneRune
+                + "  - " + prim2
+                + "  - " + prim3
+                + "  - " + prim4
+                + "              " + secondaryTree + ": "
+                + "  - " + sec1
+                + "  - " + sec2;
     }
 
     @Override

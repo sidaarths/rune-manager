@@ -21,4 +21,10 @@ class RuneTest {
         assertEquals(rune.getSecondaryTree(), "secondaryTree");
         assertEquals(rune.getKeystoneRune(), "keystoneRune");
     }
+
+    @Test
+    public void testDisplayRune() {
+        assertEquals("primaryTree:   - keystoneRune  - prim2  - prim3  - prim4              secondaryTree:   - " +
+                "sec1  - sec2", rune.displayRune());
+    }
 }

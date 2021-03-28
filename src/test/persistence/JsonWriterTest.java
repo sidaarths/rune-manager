@@ -61,7 +61,7 @@ class JsonWriterTest extends JsonTest {
 
             JsonReader reader = new JsonReader("./data/testWriterGeneralRuneList.json");
             runeList = reader.read();
-            List<Rune> runes = runeList.toList();
+            List<Rune> runes = runeList.getList();
             assertEquals(2, runes.size());
             checkRune(runes.get(0), "title", "primaryTree", "secondaryTree", "keystoneRune");
             checkRune(runes.get(1), "title2", "primaryTree2", "secondaryTree2", "keystoneRune2");

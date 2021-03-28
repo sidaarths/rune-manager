@@ -32,35 +32,8 @@ public class RuneListTest {
     public void testAddRune() {
         runeList.addRune(rune1);
         assertEquals(runeList.length(), 1);
-        ArrayList<Rune> list = runeList.toList();
+        ArrayList<Rune> list = runeList.getList();
         assertEquals(list.get(0), rune1);
-    }
-
-    @Test
-    public void testDisplayLst() {
-        assertFalse(runeList.displayLst());
-        runeList.addRune(rune1);
-        assertTrue(runeList.displayLst());
-    }
-
-    @Test
-    public void testDisplayLstWithKey() {
-        assertFalse(runeList.displayLstWithKey("keystoneRune"));
-        runeList.addRune(rune1);
-        assertFalse(runeList.displayLstWithKey("keystoneRune2"));
-        assertTrue(runeList.displayLstWithKey("keystoneRune"));
-        runeList.addRune(rune2);
-        assertTrue(runeList.displayLstWithKey("keystoneRune2"));
-    }
-
-    @Test
-    public void testDisplayRuneWithTitle() {
-        assertFalse(runeList.displayRuneWithTitle("title"));
-        runeList.addRune(rune1);
-        assertFalse(runeList.displayRuneWithTitle("title2"));
-        assertTrue(runeList.displayRuneWithTitle("title"));
-        runeList.addRune(rune2);
-        assertTrue(runeList.displayRuneWithTitle("title2"));
     }
 
     @Test
@@ -79,7 +52,7 @@ public class RuneListTest {
         assertEquals(runeList.length(), 2);
         runeList.deleteRune("title");
         assertEquals(runeList.length(), 1);
-        ArrayList<Rune> list = runeList.toList();
+        ArrayList<Rune> list = runeList.getList();
         assertEquals(list.get(0), rune2);
     }
 
@@ -92,5 +65,6 @@ public class RuneListTest {
         runeList.deleteRune("title0");
         assertEquals(runeList.length(), 2);
     }
+
 
 }
