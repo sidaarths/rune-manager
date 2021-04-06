@@ -15,14 +15,12 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
 
 //GUI Main Application
 public class GUI {
 
     private static final String JSON_STORE = "./data/myFile.json";
     private RuneList runeList;
-    private Scanner input;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
@@ -40,15 +38,13 @@ public class GUI {
     //EFFECTS: runs rune application
     public GUI() {
         runeList = new RuneList();
-        input = new Scanner(System.in);
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         String command;
+
         int flag = 0;
         while (flag == 0) {
-            System.out.println("Would you like to load rune page list from file? (Y/N)");
-            command = input.next();
-            input.skip("((?<!\\R)\\s)*");
+            command = JOptionPane.showInputDialog(null, "Would you like to load rune page list from file? (Y/N)");
             command = command.toLowerCase();
             if (command.equals("y")) {
                 loadRunePageList();
@@ -56,7 +52,7 @@ public class GUI {
             } else if (command.equals("n")) {
                 flag = 1;
             } else {
-                System.out.println("Selection not valid...");
+                JOptionPane.showMessageDialog(null, "Invalid option!");
             }
         }
         runApp();
@@ -278,9 +274,6 @@ public class GUI {
     public class AddButtonListener implements ActionListener {
 
         private JFrame addFrame;
-        private JPanel panel;
-        private JPanel nextPanel;
-
         private JButton back;
         private JLabel titleLabel;
         private JTextField titleField;
@@ -318,8 +311,8 @@ public class GUI {
         //MODIFIES: this
         //EFFECTS: adds all components to panel
         private void setupPanel() {
-            panel = new JPanel();
-            nextPanel = new JPanel();
+            JPanel panel = new JPanel();
+            JPanel nextPanel = new JPanel();
             panel.add(titleLabel);
             panel.add(titleField);
             panel.add(tree1Label);
