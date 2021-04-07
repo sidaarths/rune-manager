@@ -35,3 +35,8 @@ This project is of interest to me as it is something that will be useful to me a
 - As a user, I want to be able to delete a rune page in my collection 
 - As a user, I want to be able to store the rune pages on a file
 - As a user, I want to be able to lead rune pages from a file
+
+##Phase 4: Task 2
+
+Test and design a class in your model package that is robust.
+RuneList Class has a method sortWithKey that throws checked exception NotFoundException.
