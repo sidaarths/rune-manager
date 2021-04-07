@@ -1,5 +1,6 @@
 package model;
 
+import model.exceptions.NotFoundException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
@@ -64,6 +65,23 @@ public class RuneList implements Writable {
         }
 
         return jsonArray;
+    }
+
+    //EFFECTS: returns a new rune page list of rune pages with given keystone
+    // throws NotFoundException if no rune pages were found
+    public RuneList sortWithKey(String keyR) throws NotFoundException {
+        int flag = 0;
+        RuneList newList = new RuneList();
+        for (Rune r : runePageList) {
+            if (r.getKeystoneRune().equals(keyR)) {
+                flag = 1;
+                newList.addRune(r);
+            }
+        }
+        if (flag == 0) {
+            throw new NotFoundException("Rune Page with given keystone not found.");
+        }
+        return newList;
     }
 }
 

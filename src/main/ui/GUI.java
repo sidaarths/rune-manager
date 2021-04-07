@@ -7,6 +7,7 @@ import java.awt.*;
 import model.Rune;
 import model.RuneList;
 
+import model.exceptions.NotFoundException;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -226,17 +227,8 @@ public class GUI {
         @Override
         public void actionPerformed(ActionEvent event) {
             String keyR = JOptionPane.showInputDialog(null, "Enter keystone rune: ");
-            int flag = 0;
-            RuneList newList = new RuneList();
-            for (Rune r : runeList.getList()) {
-                if (r.getKeystoneRune().equals(keyR)) {
-                    flag = 1;
-                    newList.addRune(r);
-                }
-            }
-            if (flag == 0) {
-                JOptionPane.showMessageDialog(null, "No rune page found with given title!");
-            } else {
+            try {
+                RuneList newList = runeList.sortWithKey(keyR);
                 JTable resultTable = makeTable(newList);
                 JFrame resultFrame = new JFrame();
                 resultFrame.setTitle("Search Result for " + keyR);
@@ -245,6 +237,8 @@ public class GUI {
                 JPanel panel = new JPanel();
                 panel.add(resultTable);
                 resultFrame.add(panel);
+            } catch (NotFoundException e) {
+                JOptionPane.showMessageDialog(null, "No rune page found with given title!");
             }
         }
     }

@@ -1,5 +1,6 @@
 package model;
 
+import model.exceptions.NotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -66,5 +67,34 @@ public class RuneListTest {
         assertEquals(runeList.length(), 2);
     }
 
+    @Test
+    public void testSortWithoutException() {
+        try {
+            runeList.addRune(rune1);
+            runeList.addRune(rune2);
+            Rune rune3 = new Rune("title45", "primaryTree45", "secondaryTree45",
+                    "keystoneRune", "prim2", "prim3", "prim4", "sec1", "sec2");
+            runeList.addRune(rune3);
+            RuneList newList = runeList.sortWithKey("keystoneRune");
+            assertTrue(newList.getList().contains(rune1));
+            assertTrue(newList.getList().contains(rune3));
+        } catch (NotFoundException e) {
+            fail("Exception should not be thrown");
+        }
+    }
 
+    @Test
+    public void testSortWithException() {
+        try {
+            runeList.addRune(rune1);
+            runeList.addRune(rune2);
+            Rune rune3 = new Rune("title45", "primaryTree45", "secondaryTree45",
+                    "keystoneRune", "prim2", "prim3", "prim4", "sec1", "sec2");
+            runeList.addRune(rune3);
+            RuneList newList = runeList.sortWithKey("keystoneRune7");
+            fail("Exception should be thrown");
+        } catch (NotFoundException e) {
+            //pass
+        }
+    }
 }
