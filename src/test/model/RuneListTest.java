@@ -91,7 +91,7 @@ public class RuneListTest {
             Rune rune3 = new Rune("title45", "primaryTree45", "secondaryTree45",
                     "keystoneRune", "prim2", "prim3", "prim4", "sec1", "sec2");
             runeList.addRune(rune3);
-            RuneList newList = runeList.sortWithKey("keystoneRune7");
+            runeList.sortWithKey("keystoneRune7");
             fail("Exception should be thrown");
         } catch (NotFoundException e) {
             //pass
