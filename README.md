@@ -12,11 +12,10 @@ They are:
 - Resolve
 - Inspiration
 
-You can choose runes from 2 different trees. The game allows you to select 4 runes from the primary tree and 2 runes from another tree which we will call the secondary tree. 
+You can choose runes from 2 different trees. LoL allows you to select 4 runes from the primary tree and 2 runes from another tree which we will call the secondary tree. 
 The keystone rune is the first rune from the primary tree. This rune has a major impact on your character. You can only have one keystone rune, and it must be from your primary tree.
 Runes allow for varied playstyles and builds. The same character can be played in multiple different ways by changing 
-your rune page. 
-
+your rune page. Having an application that stores your ideas for different rune pages is very useful.
 
 The application will allow you to:
 - store and keep track of rune pages 
@@ -40,3 +39,9 @@ This project is of interest to me as it is something that will be useful to me a
 
 Test and design a class in your model package that is robust.
 RuneList Class has a method sortWithKey that throws checked exception NotFoundException.
+
+##Phase 4: Task 3
+
+- Made different enumerations for the trees instead of using strings
+- Used iterable in RuneList to make it more robust
+- Used more classes for gui for different frames to make it more specific to function
