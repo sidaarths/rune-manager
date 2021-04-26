@@ -40,8 +40,3 @@ This project is of interest to me as it is something that will be useful to me a
 Test and design a class in your model package that is robust.
 RuneList Class has a method sortWithKey that throws checked exception NotFoundException.
 
-##Phase 4: Task 3
-
-- Made different enumerations for the trees instead of using strings
-- Used iterable in RuneList to make it more robust
-- Used more classes for gui for different frames to make it more specific to function
