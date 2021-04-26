@@ -13,7 +13,7 @@ import org.json.*;
 
 // Represents a reader that reads runeList from JSON data stored in file
 // Citation: code obtained from JsonSerializationDemo
-//           URL: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
+
 public class JsonReader {
     private String source;
 

@@ -8,7 +8,7 @@ import java.io.*;
 
 // Represents a writer that writes JSON representation of runeList to file
 // Citation: code obtained from JsonSerializationDemo
-//           URL: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
+
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;
