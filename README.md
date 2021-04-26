@@ -18,6 +18,7 @@ Runes allow for varied playstyles and builds. The same character can be played i
 your rune page. Having an application that stores your ideas for different rune pages is very useful.
 
 The application will allow you to:
+- add and delete rune pages from list
 - store and keep track of rune pages 
 - display all the stored rune pages
 - display all the rune pages that have a specific keystone rune 
