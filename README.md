@@ -19,7 +19,8 @@ your rune page. Having an application that stores your ideas for different rune 
 
 The application will allow you to:
 - add and delete rune pages from list
+- search for a rune page using its title
 - store and keep track of rune pages 
 - display all the stored rune pages
 - display all the rune pages that have a specific keystone rune 
-- search for a rune page using its title
+
